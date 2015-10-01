@@ -1,4 +1,5 @@
-### This is a CakePHP plugin to work with FullCalendar
+# CakeFullCalendar
+Notice: The readme file is incomplete.
 
 ## Thanks
 
@@ -17,9 +18,7 @@ LICENCE) together to create a simple and sleek experience:
 
 Write a better README
 
-Notice: The readme file is incomplete.
-
-# Requirements
+## Requirements
  - CakePHP (http://cakephp.org) Required by this plugin
  - Full Calendar (http://arshaw.com/fullcalendar) The jQuery based Calendar
  - jQuery (http://jquery.com) Required by Full Calendar
