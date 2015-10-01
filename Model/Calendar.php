@@ -1,6 +1,7 @@
 <?php
+
 /*
- * Controller/FullCalendarController.php
+ * Model/Calendar.php
  * CakePHP Full Calendar Plugin
  *
  * Copyright (c) 2010 Silas Montgomery
@@ -9,13 +10,14 @@
  * Licensed under MIT
  * http://www.opensource.org/licenses/mit-license.php
  */
- 
-class FullCalendarController extends FullCalendarAppController {
 
-	var $name = 'FullCalendar';
+App::uses('CalendarAppModel', 'Calendar.Model');
 
-	function index() {
-	}
+/**
+ * Class Calendar
+ */
+class Calendar extends CalendarAppModel
+{
 
+    public $useTable = false;
 }
-?>

@@ -7,15 +7,9 @@
  * Licensed under MIT
  * http://www.opensource.org/licenses/mit-license.php
  */
-
 App::uses('CalendarAppController', 'Calendar.Controller');
 
-/**
- * Class EventTypesController
- *
- * @param EventType $EventType
- */
-class EventTypesController extends CalendarAppController
+class EventStatusesController extends CalendarAppController
 {
 
     /**
@@ -23,8 +17,8 @@ class EventTypesController extends CalendarAppController
      */
     public function index()
     {
-        $this->EventType->recursive = 0;
-        $this->set('eventTypes', $this->paginate());
+        $this->EventStatus->recursive = 0;
+        $this->set('eventStatuses', $this->paginate());
     }
 
     /**
@@ -32,53 +26,50 @@ class EventTypesController extends CalendarAppController
      */
     public function admin_index()
     {
-        $this->EventType->recursive = 0;
-        $this->set('eventTypes', $this->paginate());
+        $this->EventStatus->recursive = 0;
+        $this->set('eventStatuses', $this->paginate());
     }
 
     /**
-     * @param int $id
-     * @throws Exception
+     * @param type $id
      */
     public function view($id = null)
     {
         if (!$id) {
-            throw new Exception(__('Invalid view'));
+            $this->Session->setFlash(__('Invalid event status', true));
+            $this->redirect(['action' => 'index']);
         }
-        $this->set('eventType', $this->EventType->read(null, $id));
+        $this->set('eventStatus', $this->EventType->read(null, $id));
     }
 
     /**
-     * @param int $id
+     * @param type $id
      */
     public function admin_view($id = null)
     {
         if (!$id) {
-            $this->Session->setFlash(__('Invalid event type', true));
+            $this->Session->setFlash(__('Invalid event status', true));
             $this->redirect(['action' => 'index']);
         }
-        $this->set('eventType', $this->EventType->read(null, $id));
+        $this->set('eventStatus', $this->EventType->read(null, $id));
     }
 
     /**
-     * admin add
+     *
      */
     public function admin_add()
     {
         if (!empty($this->data)) {
-            $this->EventType->create();
-            if ($this->EventType->save($this->data)) {
-                $this->Session->setFlash(__('The event type has been saved', true));
+            $this->EventStatus->create();
+            if ($this->EventStatus->save($this->data)) {
                 $this->redirect(['action' => 'index']);
             } else {
-                $this->Session->setFlash(__('The event type could not be saved. Please, try again.', true));
+                $this->Session->setFlash(__('The event status could not be saved. Please, try again.', true));
             }
         }
     }
 
     /**
-     * admin edit method
-     *
      * @param type $id
      */
     public function admin_edit($id = null)
@@ -88,34 +79,31 @@ class EventTypesController extends CalendarAppController
             $this->redirect(['action' => 'index']);
         }
         if (!empty($this->data)) {
-            if ($this->EventType->save($this->data)) {
-                $this->Session->setFlash(__('The event type has been saved', true));
+            if ($this->EventStatus->save($this->data)) {
                 $this->redirect(['action' => 'index']);
             } else {
-                $this->Session->setFlash(__('The event type could not be saved. Please, try again.', true));
+                $this->Session->setFlash(__('The event status could not be saved. Please, try again.'));
             }
         }
         if (empty($this->data)) {
-            $this->data = $this->EventType->read(null, $id);
+            $this->data = $this->EventStatus->read(null, $id);
         }
     }
 
     /**
-     * admin delete
-     *
      * @param type $id
      */
     public function admin_delete($id = null)
     {
         if (!$id) {
-            $this->Session->setFlash(__('Invalid id for event type', true));
+            $this->Session->setFlash(__('Invalid id for event status', true));
             $this->redirect(['action' => 'index']);
         }
-        if ($this->EventType->delete($id)) {
-            $this->Session->setFlash(__('Event type deleted', true));
+        if ($this->EventStatus->delete($id)) {
+            $this->Session->setFlash(__('Event status deleted', true));
             $this->redirect(['action' => 'index']);
         }
-        $this->Session->setFlash(__('Event type was not deleted', true));
+        $this->Session->setFlash(__('Event status was not deleted', true));
         $this->redirect(['action' => 'index']);
     }
 

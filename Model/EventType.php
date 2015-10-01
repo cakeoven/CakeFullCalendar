@@ -1,33 +1,37 @@
 <?php
-/*
+/**
  * Model/EventType.php
  * CakePHP Full Calendar Plugin
- *
  * Copyright (c) 2010 Silas Montgomery
  * http://silasmontgomery.com
- *
  * Licensed under MIT
  * http://www.opensource.org/licenses/mit-license.php
  */
- 
-class EventType extends FullCalendarAppModel {
-	var $name = 'EventType';
-	var $displayField = 'name';
-	var $validate = array(
-		'name' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-			),
-		),
-	);
+App::uses('CalendarAppModel', 'Calendar.Model');
 
-	var $hasMany = array(
-		'Event' => array(
-			'className' => 'FullCalendar.Event',
-			'foreignKey' => 'event_type_id',
-			'dependent' => false,
-		)
-	);
+/**
+ * Class EventStatus
+ *
+ * @param Event $Event
+ */
+class EventType extends CalendarAppModel
+{
+    var $name = 'EventType';
+    var $displayField = 'name';
+    var $validate = [
+        'name' => [
+            'notempty' => [
+                'rule' => ['notempty'],
+            ],
+        ],
+    ];
+
+    var $hasMany = [
+        'Event' => [
+            'className' => 'FullCalendar.Event',
+            'foreignKey' => 'event_type_id',
+            'dependent' => false,
+        ],
+    ];
 
 }
-?>

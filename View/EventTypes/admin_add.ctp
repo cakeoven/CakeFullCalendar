@@ -8,15 +8,15 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 ?>
-<?php $this->Html->addCrumb(__('Event Types')); ?>
-<?php $this->Html->addCrumb(__('Create')); ?>
+<?php $this->Html->addCrumb(__('Events'), ['plugin' => 'calendar', 'controller' => 'events', 'action' => 'index'],
+    ['icon' => ['class' => 'fa fa-calendar fa-fw']]); ?>
+<?php $this->Html->addCrumb(__('Types')); ?>
 <?php echo $this->Form->create('EventType'); ?>
 <div class="row">
     <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
         <div class="well">
-            <h3><?php echo __('Add Event Type'); ?></h3>
             <?php
-            echo $this->Form->input('name');
+            echo $this->Form->input('type');
             echo $this->Form->chosen('color', [
                 'options' => [
                     'Blue' => 'Blue',
@@ -36,11 +36,3 @@
     </div>
 </div>
 <?php echo $this->Form->end(); ?>
-<div class="actions">
-    <ul>
-        <li><?php echo $this->Html->link(__('Manage Event Types', true),
-                ['plugin' => 'calendar', 'action' => 'index']); ?></li>
-        <li><?php echo $this->Html->link(__('View Calendar', true),
-                ['plugin' => 'calendar', 'controller' => 'calendar']); ?></li>
-    </ul>
-</div>

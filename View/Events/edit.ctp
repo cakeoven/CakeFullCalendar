@@ -1,6 +1,6 @@
 <?php
 /*
- * View/Events/edit.ctp
+ * View/Events/add.ctp
  * CakePHP Full Calendar Plugin
  *
  * Copyright (c) 2010 Silas Montgomery
@@ -10,32 +10,64 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 ?>
-<div class="events form">
-<?php echo $this->Form->create('Event');?>
-	<fieldset>
- 		<legend><?php __('Edit Event'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('event_type_id');
-		echo $this->Form->input('title');
-		echo $this->Form->input('details');
-		echo $this->Form->input('start');
-		echo $this->Form->input('end');
-		echo $this->Form->input('all_day');
-		echo $this->Form->input('status', array('options' => array(
-					'Scheduled' => 'Scheduled','Confirmed' => 'Confirmed','In Progress' => 'In Progress',
-					'Rescheduled' => 'Rescheduled','Completed' => 'Completed'
-					)
-				)
-			);
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit', true));?>
+<?php $this->Html->addCrumb(__('Events')); ?>
+<?php $this->Html->addCrumb(__('Edit')); ?>
+<?php echo $this->Form->create('Event'); ?>
+<?php echo $this->Form->input('id'); ?>
+<div class="row">
+    <div class="col-md-9">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><?php echo $this->Html->link(__('Event'), '#event',
+                    ["data-toggle" => 'tab', 'role' => 'tab']); ?></li>
+        </ul>
+        <div class="" ass="tab-content">
+            <div class="tab-pane active" id="event">
+                <?php
+                echo $this->Form->input('title');
+                echo $this->Form->input('details');
+                ?>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <?php echo $this->Form->datetimepicker('start'); ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <?php echo $this->Form->datetimepicker('end'); ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->Form->checkbox('all_day'); ?>
+                    <?php echo $this->Form->label(__('All Day Event')); ?>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <?php echo $this->Form->chosen('type_id', ['empty' => false]); ?>
+                    </div>
+                    <div class="col-sm-6">
+                        <?php echo $this->Form->chosen('status_id', ['empty' => false]); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 tabs-next">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="btn-group">
+                    <?php echo $this->Form->btnSubmit(); ?>
+                    <?php echo $this->Form->btnReset(); ?>
+                </div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item"><?php echo $this->Html->link(__('Manage Events', true),
+                        ['plugin' => 'calendar', 'action' => 'index']); ?></li>
+                <li class="list-group-item"><?php echo $this->Html->link(__('View Calendar', true),
+                        ['plugin' => 'calendar', 'controller' => 'calendar', 'action' => 'index']); ?></li>
+            </ul>
+        </div>
+    </div>
 </div>
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('View Event', true), array('plugin' => 'full_calendar', 'action' => 'view', $this->Form->value('Event.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('Manage Events', true), array('plugin' => 'full_calendar', 'action' => 'index'));?></li>
-		<li><li><?php echo $this->Html->link(__('View Calendar', true), array('plugin' => 'full_calendar', 'controller' => 'full_calendar')); ?></li>
-	</ul>
-</div>
+<?php echo $this->Form->end(); ?>
+
+

@@ -1,0 +1,13 @@
+{
+  "name": "CakeFullCalendar",
+  "description": "A CakePHP plugin for FullCalendar",
+  "dependencies": {
+    "jquery-ui": "*",
+    "fullcalendar": "1.*",
+    "qtip2": "*"
+  },
+  "authors": [
+    "George Mponos <gmponos@gmail.com>"
+  ],
+  "license": "MIT"
+}

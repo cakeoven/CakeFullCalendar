@@ -10,5 +10,4 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 
-echo $json; 
-?>
+echo $json;
