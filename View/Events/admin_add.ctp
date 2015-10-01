@@ -13,7 +13,7 @@
 <?= $this->Form->create('Event'); ?>
 <div class="row">
     <div class="col-md-9">
-        <ul class="nav nav-pills" role="tablist">
+        <ul class="nav nav-tabs" role="tablist">
             <li class="active">
                 <?= $this->Html->link(__('Event'), '#event', [
                     "data-toggle" => 'tab',
@@ -58,29 +58,13 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3 tabs-next">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="btn-group">
-                    <?= $this->Form->btnSubmit(); ?>
-                    <?= $this->Form->btnReset(); ?>
-                </div>
-            </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <?= $this->Html->link(__('Manage Events', true),
-                        ['plugin' => 'calendar', 'action' => 'index']); ?>
-                </li>
-                <li class="list-group-item">
-                    <?= $this->Html->link(__('View Calendar', true), [
-                        'plugin' => 'calendar',
-                        'controller' => 'calendar',
-                        'action' => 'index',
-                    ]); ?>
-                </li>
-            </ul>
-        </div>
-    </div>
+</div>
+<div class="btn-group">
+    <?= $this->Form->btnSubmit(); ?>
+    <?= $this->Form->btnReset(); ?>
+    <?= $this->Html->link(__('back'),
+        ['controller' => 'events', 'action' => 'index', 'plugin' => 'calendar'],
+        ['class' => 'btn btn-success', 'icon' => ['class' => 'fa fa-arrow-left fa-fw']]); ?>
 </div>
 <?= $this->Form->end(); ?>
 

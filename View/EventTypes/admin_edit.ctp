@@ -18,20 +18,13 @@
                 echo $this->Form->input('id');
                 echo $this->Form->input('type');
                 echo $this->Form->chosen('color', [
-                    'options' => [
-                        'Blue' => 'Blue',
-                        'Red' => 'Red',
-                        'Pink' => 'Pink',
-                        'Purple' => 'Purple',
-                        'Orange' => 'Orange',
-                        'Green' => 'Green',
-                        'Gray' => 'Gray',
-                        'Black' => 'Black',
-                        'Brown' => 'Brown',
-                    ],
+                    'options' => $colors,
                     'empty' => false,
                 ]);
                 ?>
+                <?= $this->Html->link(__('back'),
+                    ['controller' => 'events', 'action' => 'index', 'plugin' => 'calendar'],
+                    ['class' => 'btn btn-success', 'icon' => ['class' => 'fa fa-arrow-left fa-fw']]); ?>
                 <?php echo $this->Form->btnSubmit(); ?>
             </div>
         </div>

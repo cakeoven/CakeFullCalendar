@@ -13,7 +13,7 @@ App::uses('CalendarAppController', 'Calendar.Controller');
 /**
  * Class EventTypesController
  *
- * @param EventType $EventType
+ * @property EventType $EventType
  */
 class EventTypesController extends CalendarAppController
 {
@@ -119,4 +119,26 @@ class EventTypesController extends CalendarAppController
         $this->redirect(['action' => 'index']);
     }
 
+    /**
+     * Called after the controller action is run, but before the view is rendered. You can use this method
+     * to perform logic or set view variables that are required on every request.
+     *
+     * @return void
+     * @link http://book.cakephp.org/2.0/en/controllers.html#request-life-cycle-callbacks
+     */
+    public function beforeRender()
+    {
+        $colors = [
+            'Blue' => 'Blue',
+            'Red' => 'Red',
+            'Pink' => 'Pink',
+            'Purple' => 'Purple',
+            'Orange' => 'Orange',
+            'Green' => 'Green',
+            'Gray' => 'Gray',
+            'Black' => 'Black',
+            'Brown' => 'Brown',
+        ];
+        $this->set('colors', $colors);
+    }
 }

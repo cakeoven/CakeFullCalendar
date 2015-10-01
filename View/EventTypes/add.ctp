@@ -17,19 +17,7 @@
             <h3><?php echo __('Add Event Type'); ?></h3>
             <?php
             echo $this->Form->input('name');
-            echo $this->Form->chosen('color', [
-                'options' => [
-                    'Blue' => 'Blue',
-                    'Red' => 'Red',
-                    'Pink' => 'Pink',
-                    'Purple' => 'Purple',
-                    'Orange' => 'Orange',
-                    'Green' => 'Green',
-                    'Gray' => 'Gray',
-                    'Black' => 'Black',
-                    'Brown' => 'Brown',
-                ],
-            ]);
+            echo $this->Form->chosen('color', ['options' => $colors]);
             ?>
             <?php echo $this->Form->btnSubmit(); ?>
         </div>

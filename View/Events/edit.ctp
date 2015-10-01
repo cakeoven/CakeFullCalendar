@@ -51,22 +51,10 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3 tabs-next">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="btn-group">
-                    <?php echo $this->Form->btnSubmit(); ?>
-                    <?php echo $this->Form->btnReset(); ?>
-                </div>
-            </div>
-            <ul class="list-group">
-                <li class="list-group-item"><?php echo $this->Html->link(__('Manage Events', true),
-                        ['plugin' => 'calendar', 'action' => 'index']); ?></li>
-                <li class="list-group-item"><?php echo $this->Html->link(__('View Calendar', true),
-                        ['plugin' => 'calendar', 'controller' => 'calendar', 'action' => 'index']); ?></li>
-            </ul>
-        </div>
-    </div>
+</div>
+<div class="btn-group">
+    <?php echo $this->Form->btnSubmit(); ?>
+    <?php echo $this->Form->btnReset(); ?>
 </div>
 <?php echo $this->Form->end(); ?>
 

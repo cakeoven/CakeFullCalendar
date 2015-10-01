@@ -13,7 +13,6 @@ App::uses('AppController', 'Controller');
 /**
  * @package    Plugins
  * @subpackage Calendar
- * @property SessionComponent $Session
  */
 class CalendarAppController extends AppController
 {

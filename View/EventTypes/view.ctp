@@ -8,39 +8,50 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 ?>
+<div class="toolbar toolbar-default">
+    <?= $this->Html->link(__('Add'), ['action' => 'add'],
+        ['class' => 'btn btn-success btn-sm', 'icon' => ['class' => 'fa fa-fw fa-plus']]) ?>
+    <?= $this->Html->link(__('Edit'),
+        ['plugin' => 'calendar', 'action' => 'edit', $eventType['EventType']['id']], [
+            'class' => 'btn btn-success btn-sm',
+            'icon' => [
+                'class' => 'fa fa-fw fa-pencil',
+            ],
+        ]); ?>
+    <?= $this->Html->link(__('Delete'),
+        ['plugin' => 'calendar', 'action' => 'delete', $eventType['EventType']['id']], [
+            'class' => 'btn btn-danger btn-sm',
+            'icon' => [
+                'class' => 'fa fa-fw fa-times',
+            ],
+        ],
+        sprintf(__('Are you sure you want to delete %s?'), $eventType['EventType']['type'])); ?>
+    <?= $this->Html->link(__('Event Types'),
+        ['plugin' => 'calendar', 'action' => 'index'], [
+            'class' => 'btn btn-warning btn-sm',
+            'icon' => [
+                'class' => 'fa fa-fw fa-rss',
+            ],
+        ]); ?>
+    <?= $this->Html->link(__('Calendar'),
+        ['plugin' => 'calendar', 'controller' => 'calendar'], [
+            'class' => 'btn btn-warning btn-sm',
+            'icon' => [
+                'class' => 'fa fa-fw fa-calendar',
+            ],
+        ]); ?>
+</div>
 <div class="eventTypes view">
-    <dl><?php $i = 0;
-        $class = ' class="altrow"'; ?>
-        <dt<?php if ($i % 2 == 0) {
-            echo $class;
-        } ?>><?php echo __('Type'); ?></dt>
-        <dd<?php if ($i++ % 2 == 0) {
-            echo $class;
-        } ?>>
-            <?php echo $eventType['EventType']['type']; ?>
+    <dl class="dl-horizontal">
+        <dt><?= __('Type'); ?></dt>
+        <dd>
+            <?= $eventType['EventType']['type']; ?>
             &nbsp;
         </dd>
-        <dt<?php if ($i % 2 == 0) {
-            echo $class;
-        } ?>><?php echo __('Color'); ?></dt>
-        <dd<?php if ($i++ % 2 == 0) {
-            echo $class;
-        } ?>>
-            <?php echo $eventType['EventType']['color']; ?>
+        <dt><?= __('Color'); ?></dt>
+        <dd>
+            <?= $eventType['EventType']['color']; ?>
             &nbsp;
         </dd>
     </dl>
-</div>
-<div class="actions">
-    <ul>
-        <li><?php echo $this->Html->link(__('Edit Event Type', true),
-                ['plugin' => 'calendar', 'action' => 'edit', $eventType['EventType']['id']]); ?> </li>
-        <li><?php echo $this->Html->link(__('Delete Event Type', true),
-                ['plugin' => 'calendar', 'action' => 'delete', $eventType['EventType']['id']], null,
-                sprintf(__('Are you sure you want to delete %s?', true), $eventType['EventType']['type'])); ?> </li>
-        <li><?php echo $this->Html->link(__('Manage Event Types', true),
-                ['plugin' => 'calendar', 'action' => 'index']); ?> </li>
-        <li><?php echo $this->Html->link(__('View Calendar', true),
-                ['plugin' => 'calendar', 'controller' => 'calendar']); ?></li>
-    </ul>
 </div>

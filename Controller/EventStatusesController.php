@@ -9,6 +9,11 @@
  */
 App::uses('CalendarAppController', 'Calendar.Controller');
 
+/**
+ * Class EventStatusesController
+ *
+ * @property EventStatus $EventStatus
+ */
 class EventStatusesController extends CalendarAppController
 {
 
@@ -31,7 +36,7 @@ class EventStatusesController extends CalendarAppController
     }
 
     /**
-     * @param type $id
+     * @param int $id
      */
     public function view($id = null)
     {
@@ -39,7 +44,7 @@ class EventStatusesController extends CalendarAppController
             $this->Session->setFlash(__('Invalid event status', true));
             $this->redirect(['action' => 'index']);
         }
-        $this->set('eventStatus', $this->EventType->read(null, $id));
+        $this->set('eventStatus', $this->EventStatus->read(null, $id));
     }
 
     /**
@@ -51,7 +56,7 @@ class EventStatusesController extends CalendarAppController
             $this->Session->setFlash(__('Invalid event status', true));
             $this->redirect(['action' => 'index']);
         }
-        $this->set('eventStatus', $this->EventType->read(null, $id));
+        $this->set('eventStatus', $this->EventStatus->read(null, $id));
     }
 
     /**
@@ -70,7 +75,7 @@ class EventStatusesController extends CalendarAppController
     }
 
     /**
-     * @param type $id
+     * @param int $id
      */
     public function admin_edit($id = null)
     {
@@ -91,7 +96,7 @@ class EventStatusesController extends CalendarAppController
     }
 
     /**
-     * @param type $id
+     * @param int $id
      */
     public function admin_delete($id = null)
     {

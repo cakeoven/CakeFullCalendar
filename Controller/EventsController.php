@@ -59,7 +59,7 @@ class EventsController extends CalendarAppController
     }
 
     /**
-     * @param type $id
+     * @param int $id
      */
     public function edit($id = null)
     {
@@ -70,8 +70,10 @@ class EventsController extends CalendarAppController
             if ($this->Event->save($this->data)) {
                 $this->redirect(['action' => 'index']);
             } else {
-                $this->Session->setFlash(__('The event could not be saved. Please, try again.'), 'alert',
-                    ['class' => 'alert-danger']);
+                $this->Session->setFlash(
+                    __('The event could not be saved. Please, try again.'),
+                    'CakeBootstrap.alert_danger'
+                );
             }
         }
         if (empty($this->data)) {
@@ -92,7 +94,7 @@ class EventsController extends CalendarAppController
     }
 
     /**
-     * @param type $id
+     * @param int $id
      */
     public function admin_view($id = null)
     {
@@ -121,7 +123,7 @@ class EventsController extends CalendarAppController
     }
 
     /**
-     * @param type $id
+     * @param int $id
      */
     public function admin_edit($id = null)
     {
