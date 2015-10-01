@@ -73,6 +73,7 @@ app/[Cc]onfig/email.php
 composer.phar
 composer.lock
 vendor/
+!webroot/vendor
 
 ### ApiGen
 /webroot/doc/
