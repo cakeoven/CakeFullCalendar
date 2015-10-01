@@ -12,9 +12,7 @@
 ?>
 <h2><?php __('Event Status');?></h2>
 
-<div class="toolbar toolbar-default">
-	<?php echo $this->Html->link(__('Add'), array('action' => 'add'), array('class' => 'btn btn-success btn-sm', 'icon' => array('class' => 'icon icon-plus icon-fw')));?>
-</div>
+<?= $this->element('toolbar') ?>
 <div class="table-responsive">
 	<table class="table table-bordered table-hover table-striped">
 		<tr>

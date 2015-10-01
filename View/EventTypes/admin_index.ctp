@@ -1,16 +1,7 @@
 <?php $this->Html->addCrumb(__('Events'), ['plugin' => 'calendar', 'controller' => 'events', 'action' => 'index'],
     ['icon' => ['class' => 'fa fa-calendar fa-fw']]); ?>
 <?php $this->Html->addCrumb(__('Types')); ?>
-<div class="toolbar toolbar-default">
-    <?php echo $this->Html->link(__('Add'), ['action' => 'add'],
-        ['class' => 'btn btn-success btn-sm', 'icon' => ['class' => 'fa fa-fw fa-plus']]) ?>
-    <?php echo $this->Html->link(__('Events'),
-        ['plugin' => 'calendar', 'controller' => 'events', 'action' => 'index'],
-        ['class' => 'btn btn-primary btn-sm', 'icon' => ['class' => 'fa fa-fw fa-rss']]) ?>
-    <?php echo $this->Html->link(__('Calendar'),
-        ['plugin' => 'calendar', 'controller' => 'calendar', 'action' => 'index'],
-        ['class' => 'btn btn-primary btn-sm', 'icon' => ['class' => 'fa fa-fw fa-calendar']]) ?>
-</div>
+<?= $this->element('toolbar') ?>
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped">
         <tr>

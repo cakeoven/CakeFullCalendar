@@ -41,5 +41,5 @@
         plgFcRoot = '<?= $this->Html->url('/');?>' + "calendar";
     </script>
 <?php
-echo $this->Html->script('core/jquery-ui', ['inline' => true]);
+echo $this->Html->script('Calendar.jquery-ui', ['inline' => true]);
 echo $this->Html->script('Calendar.functions', ['inline' => false]);
