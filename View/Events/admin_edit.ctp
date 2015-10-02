@@ -14,46 +14,42 @@
 <?php $this->Html->addCrumb(__('Edit')); ?>
 <?php echo $this->Form->create('Event'); ?>
 <?php echo $this->Form->input('id'); ?>
-<div class="row">
-    <div class="col-md-9">
-        <ul class="nav nav-tabs" role="tablist">
-            <li class="active"><?php echo $this->Html->link(__('Event'), '#event',
-                    ["data-toggle" => 'tab', 'role' => 'tab']); ?></li>
-        </ul>
-        <div class="" ass="tab-content">
-            <div class="tab-pane active" id="event">
-                <?php
-                echo $this->Form->input('title');
-                echo $this->Form->input('details');
-                ?>
-                <div class="row">
-                    <div class="col-sm-5">
-                        <?= $this->Form->datepicker('date_start'); ?>
-                    </div>
-                    <div class="col-sm-3">
-                        <?= $this->Form->clockpicker('time_start'); ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5">
-                        <?= $this->Form->datepicker('date_end'); ?>
-                    </div>
-                    <div class="col-sm-3">
-                        <?= $this->Form->clockpicker('time_end'); ?>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <?php echo $this->Form->checkbox('all_day'); ?>
-                    <?php echo $this->Form->label(__('All Day Event')); ?>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <?php echo $this->Form->chosen('type_id', ['empty' => false]); ?>
-                    </div>
-                    <div class="col-sm-6">
-                        <?php echo $this->Form->chosen('status_id', ['empty' => false]); ?>
-                    </div>
-                </div>
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active"><?php echo $this->Html->link(__('Event'), '#event',
+            ["data-toggle" => 'tab', 'role' => 'tab']); ?></li>
+</ul>
+<div class="" ass="tab-content">
+    <div class="tab-pane active" id="event">
+        <?php
+        echo $this->Form->input('title');
+        echo $this->Form->input('details');
+        ?>
+        <div class="row">
+            <div class="col-sm-5">
+                <?= $this->Form->datepicker('date_start'); ?>
+            </div>
+            <div class="col-sm-3">
+                <?= $this->Form->clockpicker('time_start'); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <?= $this->Form->datepicker('date_end'); ?>
+            </div>
+            <div class="col-sm-3">
+                <?= $this->Form->clockpicker('time_end'); ?>
+            </div>
+        </div>
+        <div class="form-group">
+            <?php echo $this->Form->checkbox('all_day'); ?>
+            <?php echo $this->Form->label(__('All Day Event')); ?>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <?php echo $this->Form->chosen('type_id', ['empty' => false]); ?>
+            </div>
+            <div class="col-sm-6">
+                <?php echo $this->Form->chosen('status_id', ['empty' => false]); ?>
             </div>
         </div>
     </div>

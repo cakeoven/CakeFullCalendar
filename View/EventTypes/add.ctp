@@ -24,11 +24,3 @@
     </div>
 </div>
 <?php echo $this->Form->end(); ?>
-<div class="actions">
-    <ul>
-        <li><?php echo $this->Html->link(__('Manage Event Types', true),
-                ['plugin' => 'calendar', 'action' => 'index']); ?></li>
-        <li><?php echo $this->Html->link(__('View Calendar', true),
-                ['plugin' => 'calendar', 'controller' => 'calendar']); ?></li>
-    </ul>
-</div>

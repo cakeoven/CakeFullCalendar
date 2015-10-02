@@ -1,17 +1,7 @@
 <?php $this->Html->addCrumb(__('Events')); ?>
 <?php $this->Html->addCrumb(__('View')); ?>
 <?php $this->Html->addCrumb($event['Event']['id']); ?>
-<div class="toolbar toolbar-default">
-    <div class="container-fluid">
-        <?php echo $this->Html->link(__('Edit'),
-            ['plugin' => 'calendar', 'action' => 'edit', $event['Event']['id']],
-            ['class' => 'btn btn-default btn-sm', 'icon' => ['class' => 'fa fa-pencil fa-fw']]); ?>
-        <?php echo $this->Html->link(__('Events'), ['plugin' => 'calendar', 'action' => 'index'],
-            ['class' => 'btn btn-default btn-sm', 'icon' => ['class' => 'fa fa-table fa-fw']]); ?>
-        <?php echo $this->Html->link(__('Calendar'), ['plugin' => 'calendar', 'controller' => 'calendar'],
-            ['class' => 'btn btn-default btn-sm', 'icon' => ['class' => 'fa fa-calendar fa-fw']]); ?>
-    </div>
-</div>
+<?= $this->element('toolbar') ?>
 <div class="row">
     <div class="col-md-6">
         <h5><?php echo __('Event'); ?></h5>
@@ -27,15 +17,7 @@
             <dt><?php echo __('Start'); ?></dt>
             <dd><?php echo $event['Event']['start']; ?>&nbsp;</dd>
             <dt><?php echo __('End'); ?></dt>
-            <dd>
-                <?php
-                if ($event['Event']['all_day'] != 1) {
-                    echo $event['Event']['end'];
-                } else {
-                    echo "N/A";
-                }
-                ?>&nbsp;
-            </dd>
+            <dd><?php echo ($event['Event']['all_day'] != 1) ? $event['Event']['end'] : "N/A"; ?>&nbsp;</dd>
             <dt><?php echo __('All Day'); ?></dt>
             <dd><?php echo $this->Html->status($event['Event']['all_day']) ?>&nbsp;</dd>
             <dt><?php echo __('Created'); ?></dt>
