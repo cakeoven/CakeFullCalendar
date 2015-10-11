@@ -69,7 +69,6 @@
                     </td>
                 </tr>
             <?php endforeach; ?>
-            v
     </table>
     <?php
     echo $this->element('pagination/paging');
