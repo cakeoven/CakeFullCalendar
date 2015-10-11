@@ -34,43 +34,47 @@
 </div>
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped small">
-        <tr>
-            <th><?= $this->Paginator->sort('type_id'); ?></th>
-            <th><?= $this->Paginator->sort('status_id'); ?></th>
-            <th><?= $this->Paginator->sort('title'); ?></th>
-            <th><?= $this->Paginator->sort('start'); ?></th>
-            <th><?= $this->Paginator->sort('end'); ?></th>
-            <th><?= $this->Paginator->sort('all_day'); ?></th>
-            <th></th>
-        </tr>
-        <?php foreach ($events as $event): ?>
+        <thead>
             <tr>
-                <td><?= $event['EventType']['type']; ?></td>
-                <td><?= $event['EventStatus']['status']; ?></td>
-                <td><?= $event['Event']['title']; ?></td>
-                <td>
-                    <time><?= $event['Event']['start']; ?>
-                </td>
-                <td>
-                    <time>
-                        <?php
-                        if ($event['Event']['all_day'] == 0) {
-                            echo $event['Event']['end'];
-                        } else {
-                            echo 'N/A';
-                        }
-                        ?>
-                    </time>
-                </td>
-                <td class="text-center">
-                    <?= $this->Html->status($event['Event']['all_day']); ?>
-                </td>
-                <td class="nowrap">
-                    <?= $this->Element->btnLinkView($event['Event']['id']); ?>
-                    <?= $this->Element->btnLinkEdit($event['Event']['id']); ?>
-                </td>
+                <th><?= $this->Paginator->sort('type_id'); ?></th>
+                <th><?= $this->Paginator->sort('status_id'); ?></th>
+                <th><?= $this->Paginator->sort('title'); ?></th>
+                <th><?= $this->Paginator->sort('start'); ?></th>
+                <th><?= $this->Paginator->sort('end'); ?></th>
+                <th><?= $this->Paginator->sort('all_day'); ?></th>
+                <th class="text-nowrap"><?= __('Actions') ?></th>
             </tr>
-        <?php endforeach; ?>
+        </thead>
+        <tbody>
+            <?php foreach ($events as $event): ?>
+                <tr>
+                    <td><?= $event['EventType']['type']; ?></td>
+                    <td><?= $event['EventStatus']['status']; ?></td>
+                    <td><?= $event['Event']['title']; ?></td>
+                    <td>
+                        <time><?= $event['Event']['start']; ?>
+                    </td>
+                    <td>
+                        <time>
+                            <?php
+                            if ($event['Event']['all_day'] == 0) {
+                                echo $event['Event']['end'];
+                            } else {
+                                echo 'N/A';
+                            }
+                            ?>
+                        </time>
+                    </td>
+                    <td class="text-center">
+                        <?= $this->Html->status($event['Event']['all_day']); ?>
+                    </td>
+                    <td class="text-nowrap">
+                        <?= $this->Element->btnLinkView($event['Event']['id']); ?>
+                        <?= $this->Element->btnLinkEdit($event['Event']['id']); ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
     </table>
     <?php
     echo $this->element('pagination/paging');

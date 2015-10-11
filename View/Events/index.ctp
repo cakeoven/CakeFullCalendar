@@ -11,21 +11,21 @@
  */
 ?>
 <div class="toolbar toolbar-default">
-    <?php echo $this->Html->link(__('Add'), ['action' => 'add'], ['class' => 'btn btn-success btn-sm']) ?>
-    <?php echo $this->Html->link(__('Calendar'),
+    <?= $this->Html->link(__('Add'), ['action' => 'add'], ['class' => 'btn btn-success btn-sm']) ?>
+    <?= $this->Html->link(__('Calendar'),
         ['plugin' => 'calendar', 'controller' => 'calendar', 'action' => 'index'],
         ['class' => 'btn btn-primary btn-sm', 'icon' => ['class' => 'fa fa-calendar icon-fw']]) ?>
     <div class="btn-group">
-        <?php echo $this->Html->button('', [
+        <?= $this->Html->button('', [
             'class' => 'btn btn-primary btn-sm dropdown-toggle',
             'data-toggle' => 'dropdown',
             'icon' => ['class' => ['fa fa-cog icon-fw']],
         ]); ?>
         <ul class="dropdown-menu">
-            <li><?php echo $this->Html->link(__('Types'),
+            <li><?= $this->Html->link(__('Types'),
                     ['plugin' => 'calendar', 'controller' => 'event_types', 'action' => 'index'],
                     ['icon' => ['class' => 'fa fa-list icon-fw']]) ?></li>
-            <li><?php echo $this->Html->link(__('Status'),
+            <li><?= $this->Html->link(__('Status'),
                     ['plugin' => 'calendar', 'controller' => 'event_statuses', 'action' => 'index'],
                     ['icon' => ['class' => 'fa fa-list icon-fw']]) ?></li>
         </ul>
@@ -33,39 +33,43 @@
 </div>
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped small">
-        <tr>
-            <th><?php echo $this->Paginator->sort('type_id'); ?></th>
-            <th><?php echo $this->Paginator->sort('status_id'); ?></th>
-            <th><?php echo $this->Paginator->sort('title'); ?></th>
-            <th><?php echo $this->Paginator->sort('start'); ?></th>
-            <th><?php echo $this->Paginator->sort('end'); ?></th>
-            <th><?php echo $this->Paginator->sort('all_day'); ?></th>
-            <th></th>
-        </tr>
-        <?php foreach ($events as $event): ?>
+        <thead>
             <tr>
-                <td><?php echo $event['EventType']['type']; ?></td>
-                <td><?php echo $event['EventStatus']['status']; ?></td>
-                <td><?php echo $event['Event']['title']; ?></td>
-                <td><?php echo $event['Event']['start']; ?></td>
-                <td>
-                    <?php
-                    if ($event['Event']['all_day'] == 0) {
-                        echo $event['Event']['end'];
-                    } else {
-                        echo 'N/A';
-                    }
-                    ?>
-                </td>
-                <td>
-                    <?php echo $this->Html->status($event['Event']['all_day']); ?>
-                </td>
-                <td class="nowrap">
-                    <?php echo $this->Element->btnLinkView($event['Event']['id']); ?>
-                    <?php echo $this->Element->btnLinkEdit($event['Event']['id']); ?>
-                </td>
+                <th><?= $this->Paginator->sort('type_id'); ?></th>
+                <th><?= $this->Paginator->sort('status_id'); ?></th>
+                <th><?= $this->Paginator->sort('title'); ?></th>
+                <th><?= $this->Paginator->sort('start'); ?></th>
+                <th><?= $this->Paginator->sort('end'); ?></th>
+                <th><?= $this->Paginator->sort('all_day'); ?></th>
+                <th class="text-nowrap"></th>
             </tr>
-        <?php endforeach; ?>
+        </thead>
+        <tbody>
+            <?php foreach ($events as $event): ?>
+                <tr>
+                    <td><?= $event['EventType']['type']; ?></td>
+                    <td><?= $event['EventStatus']['status']; ?></td>
+                    <td><?= $event['Event']['title']; ?></td>
+                    <td><?= $event['Event']['start']; ?></td>
+                    <td>
+                        <?php
+                        if ($event['Event']['all_day'] == 0) {
+                            echo $event['Event']['end'];
+                        } else {
+                            echo 'N/A';
+                        }
+                        ?>
+                    </td>
+                    <td>
+                        <?= $this->Html->status($event['Event']['all_day']); ?>
+                    </td>
+                    <td class="nowrap">
+                        <?= $this->Element->btnLinkView($event['Event']['id']); ?>
+                        <?= $this->Element->btnLinkEdit($event['Event']['id']); ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            v
     </table>
     <?php
     echo $this->element('pagination/paging');
