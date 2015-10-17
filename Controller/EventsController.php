@@ -48,10 +48,7 @@ class EventsController extends CalendarAppController
             if ($this->Event->save($this->data)) {
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Session->setFlash(
-                    __('The event could not be saved. Please, try again.'),
-                    'CakeBootstrap.alert_danger'
-                );
+                $this->Flash->danger(__('The event could not be saved. Please, try again.'));
             }
         }
         $this->set('statuses', $this->Event->EventStatus->find('list'));
@@ -70,10 +67,7 @@ class EventsController extends CalendarAppController
             if ($this->Event->save($this->data)) {
                 $this->redirect(['action' => 'index']);
             } else {
-                $this->Session->setFlash(
-                    __('The event could not be saved. Please, try again.'),
-                    'CakeBootstrap.alert_danger'
-                );
+                $this->Flash->danger(__('The event could not be saved. Please, try again.'));
             }
         }
         if (empty($this->data)) {
