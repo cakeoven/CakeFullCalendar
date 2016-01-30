@@ -10,8 +10,11 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 ?>
-<?php $this->Html->addCrumb(__('Events'), ['plugin' => 'calendar', 'controller' => 'events', 'action' => 'index'],
-    ['icon' => ['class' => 'fa fa-calendar fa-fw']]); ?>
+<?php $this->Html->addCrumb(
+    __('Events'),
+    ['plugin' => 'calendar', 'controller' => 'events', 'action' => 'index'],
+    ['icon' => ['class' => 'fa fa-calendar fa-fw']]
+); ?>
 <?php $this->Html->addCrumb(__('Types')); ?>
 <h2><?php __('Event Types'); ?></h2>
 <?= $this->element('toolbar') ?>
@@ -22,7 +25,7 @@
             <th><?php echo $this->Paginator->sort('color'); ?></th>
             <th></th>
         </tr>
-        <?php foreach ($eventTypes as $eventType): ?>
+        <?php foreach ($eventTypes as $eventType) : ?>
             <tr>
                 <td><?php echo $eventType['EventType']['type']; ?>&nbsp;</td>
                 <td><?php echo $eventType['EventType']['color']; ?>&nbsp;</td>

@@ -48,7 +48,7 @@ class EventStatusesController extends CalendarAppController
     }
 
     /**
-     * @param type $id
+     * @param int $id
      */
     public function admin_view($id = null)
     {
@@ -111,5 +111,4 @@ class EventStatusesController extends CalendarAppController
         $this->Session->setFlash(__('Event status was not deleted', true));
         $this->redirect(['action' => 'index']);
     }
-
 }

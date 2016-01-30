@@ -9,11 +9,16 @@
  */
 ?>
 <div class="toolbar toolbar-default">
-    <?= $this->Html->link(__('Add'), ['action' => 'add'],
-        ['class' => 'btn btn-success btn-sm', 'icon' => ['class' => 'fa fa-plus fa-fw']]) ?>
-    <?= $this->Html->link(__('Calendar'),
+    <?= $this->Html->link(
+        __('Add'),
+        ['action' => 'add'],
+        ['class' => 'btn btn-success btn-sm', 'icon' => ['class' => 'fa fa-plus fa-fw']]
+    ) ?>
+    <?= $this->Html->link(
+        __('Calendar'),
         ['plugin' => 'calendar', 'controller' => 'calendar', 'action' => 'index'],
-        ['class' => 'btn btn-primary btn-sm', 'icon' => ['class' => 'fa fa-calendar fa-fw']]) ?>
+        ['class' => 'btn btn-primary btn-sm', 'icon' => ['class' => 'fa fa-calendar fa-fw']]
+    ) ?>
     <div class="btn-group">
         <?= $this->Html->button('', [
             'class' => 'btn btn-primary btn-sm dropdown-toggle',
@@ -21,13 +26,17 @@
             'icon' => ['class' => ['fa fa-cog fa-fw']],
         ]); ?>
         <ul class="dropdown-menu">
-            <li><?= $this->Html->link(__('Types'),
-                    ['plugin' => 'calendar', 'controller' => 'event_types', 'action' => 'index'],
-                    ['icon' => ['class' => 'fa fa-list fa-fw']]) ?>
+            <li><?= $this->Html->link(
+                __('Types'),
+                ['plugin' => 'calendar', 'controller' => 'event_types', 'action' => 'index'],
+                ['icon' => ['class' => 'fa fa-list fa-fw']]
+            ) ?>
             </li>
-            <li><?= $this->Html->link(__('Status'),
-                    ['plugin' => 'calendar', 'controller' => 'event_statuses', 'action' => 'index'],
-                    ['icon' => ['class' => 'fa fa-list fa-fw']]) ?>
+            <li><?= $this->Html->link(
+                __('Status'),
+                ['plugin' => 'calendar', 'controller' => 'event_statuses', 'action' => 'index'],
+                ['icon' => ['class' => 'fa fa-list fa-fw']]
+            ) ?>
             </li>
         </ul>
     </div>
@@ -46,7 +55,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($events as $event): ?>
+            <?php foreach ($events as $event) : ?>
                 <tr>
                     <td><?= $event['EventType']['type']; ?></td>
                     <td><?= $event['EventStatus']['status']; ?></td>

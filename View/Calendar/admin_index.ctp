@@ -10,12 +10,16 @@
 ?>
 <?php $this->Html->addCrumb($this->Html->icon('calendar', __('Calendar'))); ?>
     <div class="toolbar toolbar-default">
-        <?= $this->Html->link(__('Add'),
+        <?= $this->Html->link(
+            __('Add'),
             ['plugin' => 'calendar', 'controller' => 'events', 'action' => 'add'],
-            ['class' => 'btn btn-success btn-sm', 'icon' => ['class' => 'fa fa-plus fa-fw']]) ?>
-        <?= $this->Html->link(__('Events'),
+            ['class' => 'btn btn-success btn-sm', 'icon' => ['class' => 'fa fa-plus fa-fw']]
+        ) ?>
+        <?= $this->Html->link(
+            __('Events'),
             ['plugin' => 'calendar', 'controller' => 'events', 'action' => 'index'],
-            ['class' => 'btn btn-success btn-sm', 'icon' => ['class' => 'fa fa-rss fa-fw']]) ?>
+            ['class' => 'btn btn-success btn-sm', 'icon' => ['class' => 'fa fa-rss fa-fw']]
+        ) ?>
         <div class="btn-group">
             <?= $this->Html->button('', [
                 'class' => 'btn btn-primary btn-sm dropdown-toggle',
@@ -23,11 +27,21 @@
                 'icon' => 'cog',
             ]); ?>
             <ul class="dropdown-menu">
-                <li><?= $this->Html->link(__('Events Types', true),
-                        ['plugin' => 'calendar', 'controller' => 'event_types', 'admin' => true]); ?>
+                <li><?= $this->Html->link(
+                    __(
+                        'Events Types',
+                        true
+                    ),
+                    ['plugin' => 'calendar', 'controller' => 'event_types', 'admin' => true]
+                ); ?>
                 </li>
-                <li><?= $this->Html->link(__('Events Status', true),
-                        ['plugin' => 'calendar', 'controller' => 'event_statuses', 'admin' => true]); ?>
+                <li><?= $this->Html->link(
+                    __(
+                        'Events Status',
+                        true
+                    ),
+                    ['plugin' => 'calendar', 'controller' => 'event_statuses', 'admin' => true]
+                ); ?>
                 </li>
             </ul>
         </div>

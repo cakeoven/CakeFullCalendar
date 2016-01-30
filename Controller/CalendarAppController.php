@@ -11,8 +11,9 @@
 App::uses('AppController', 'Controller');
 
 /**
- * @package    Plugins
- * @subpackage Calendar
+ * @author  George Mponos
+ * @author  Silas Montgomery
+ * @package Calendar
  */
 class CalendarAppController extends AppController
 {

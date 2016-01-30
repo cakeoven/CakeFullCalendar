@@ -49,5 +49,4 @@ class EventType extends CalendarAppModel
             'dependent' => false,
         ],
     ];
-
 }

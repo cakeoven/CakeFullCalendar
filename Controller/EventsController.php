@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Controller/EventsController.php
  * CakePHP Full Calendar Plugin
@@ -8,11 +7,11 @@
  * Licensed under MIT
  * http://www.opensource.org/licenses/mit-license.php
  */
+
 App::uses('CalendarAppController', 'Calendar.Controller');
 
 /**
- * @package    Plugins
- * @subpackage Calendar
+ * @package Calendar
  * @property Event $Event
  */
 class EventsController extends CalendarAppController
@@ -108,8 +107,11 @@ class EventsController extends CalendarAppController
             if ($this->Event->save($this->data)) {
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Session->setFlash(__('The event could not be saved. Please, try again.'), 'alert',
-                    ['class' => 'alert-danger']);
+                $this->Session->setFlash(
+                    __('The event could not be saved. Please, try again.'),
+                    'alert',
+                    ['class' => 'alert-danger']
+                );
             }
         }
         $this->set('statuses', $this->Event->EventStatus->find('list'));
@@ -128,8 +130,11 @@ class EventsController extends CalendarAppController
             if ($this->Event->save($this->data)) {
                 $this->redirect(['action' => 'index']);
             } else {
-                $this->Session->setFlash(__('The event could not be saved. Please, try again.'), 'alert',
-                    ['class' => 'alert-danger']);
+                $this->Session->setFlash(
+                    __('The event could not be saved. Please, try again.'),
+                    'alert',
+                    ['class' => 'alert-danger']
+                );
             }
         }
         if (empty($this->data)) {
@@ -204,5 +209,4 @@ class EventsController extends CalendarAppController
         $this->Event->saveField('end', $vars['end']);
         $this->Event->saveField('all_day', $vars['allday']);
     }
-
 }

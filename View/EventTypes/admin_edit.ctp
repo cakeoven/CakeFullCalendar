@@ -22,9 +22,11 @@
                     'empty' => false,
                 ]);
                 ?>
-                <?= $this->Html->link(__('back'),
+                <?= $this->Html->link(
+                    __('back'),
                     ['controller' => 'events', 'action' => 'index', 'plugin' => 'calendar'],
-                    ['class' => 'btn btn-success', 'icon' => ['class' => 'fa fa-arrow-left fa-fw']]); ?>
+                    ['class' => 'btn btn-success', 'icon' => ['class' => 'fa fa-arrow-left fa-fw']]
+                ); ?>
                 <?php echo $this->Form->btnSubmit(); ?>
             </div>
         </div>

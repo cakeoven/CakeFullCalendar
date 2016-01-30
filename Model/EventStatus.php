@@ -27,5 +27,4 @@ class EventStatus extends CalendarAppModel
             'dependent' => false,
         ],
     ];
-
 }

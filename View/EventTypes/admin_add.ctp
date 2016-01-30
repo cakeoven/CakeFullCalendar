@@ -8,8 +8,11 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 ?>
-<?php $this->Html->addCrumb(__('Events'), ['plugin' => 'calendar', 'controller' => 'events', 'action' => 'index'],
-    ['icon' => ['class' => 'fa fa-calendar fa-fw']]); ?>
+<?php $this->Html->addCrumb(
+    __('Events'),
+    ['plugin' => 'calendar', 'controller' => 'events', 'action' => 'index'],
+    ['icon' => ['class' => 'fa fa-calendar fa-fw']]
+); ?>
 <?php $this->Html->addCrumb(__('Types')); ?>
 <?php echo $this->Form->create('EventType'); ?>
 <div class="row">
@@ -22,9 +25,11 @@
                 'empty' => false,
             ]);
             ?>
-            <?= $this->Html->link(__('back'),
+            <?= $this->Html->link(
+                __('back'),
                 ['controller' => 'events', 'action' => 'index', 'plugin' => 'calendar'],
-                ['class' => 'btn btn-success', 'icon' => ['class' => 'fa fa-arrow-left fa-fw']]); ?>
+                ['class' => 'btn btn-success', 'icon' => ['class' => 'fa fa-arrow-left fa-fw']]
+            ); ?>
             <?php echo $this->Form->btnSubmit(); ?>
         </div>
     </div>

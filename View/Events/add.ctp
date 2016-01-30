@@ -12,8 +12,11 @@
 <?php $this->Html->addCrumb(__('Create')); ?>
 <?php echo $this->Form->create('Event'); ?>
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active"><?php echo $this->Html->link(__('Event'), '#event',
-            ["data-toggle" => 'tab', 'role' => 'tab']); ?></li>
+    <li class="active"><?php echo $this->Html->link(
+        __('Event'),
+        '#event',
+        ["data-toggle" => 'tab', 'role' => 'tab']
+    ); ?></li>
 </ul>
 <div class="tab-content">
     <div class="tab-pane active" id="event">

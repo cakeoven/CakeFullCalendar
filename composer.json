@@ -19,7 +19,7 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/cakeoven/CakeCSV/issues"
+    "issues": "https://github.com/cakeoven/CakeFullCalendar/issues"
   },
   "require": {
     "php": ">=5.4.16",
@@ -27,7 +27,7 @@
     "composer/installers": "*"
   },
   "require-dev": {
-    "cakephp/cakephp-codesniffer": "*",
+    "squizlabs/php_codesniffer": "~2.4",
     "phpunit/phpunit": "*"
   },
   "suggest": {
@@ -36,8 +36,8 @@
   "prefer-stable": true,
   "extra": {
     "branch-alias": {
-      "dev-master": "2.0-dev"
+      "dev-master": "2.x-dev"
     },
-    "installer-name": "CakeFullCalendar"
+    "installer-name": "Calendar"
   }
 }

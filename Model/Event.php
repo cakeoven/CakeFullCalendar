@@ -62,5 +62,4 @@ class Event extends CalendarAppModel
     {
         parent::beforeValidate($options);
     }
-
 }

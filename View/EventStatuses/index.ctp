@@ -18,7 +18,7 @@
             <th><?php echo $this->Paginator->sort('status'); ?></th>
             <th></th>
         </tr>
-        <?php foreach ($eventStatuses as $eventStatus): ?>
+        <?php foreach ($eventStatuses as $eventStatus) : ?>
             <tr>
                 <td><?php echo $eventStatus['EventStatus']['status']; ?>&nbsp;</td>
                 <td class="nowrap">

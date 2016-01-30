@@ -79,7 +79,7 @@ class EventTypesController extends CalendarAppController
     /**
      * admin edit method
      *
-     * @param type $id
+     * @param int $id
      */
     public function admin_edit($id = null)
     {
@@ -103,7 +103,7 @@ class EventTypesController extends CalendarAppController
     /**
      * admin delete
      *
-     * @param type $id
+     * @param int $id
      */
     public function admin_delete($id = null)
     {

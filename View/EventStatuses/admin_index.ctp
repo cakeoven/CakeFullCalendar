@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($eventStatuses as $eventStatus): ?>
+            <?php foreach ($eventStatuses as $eventStatus) : ?>
                 <tr>
                     <td><?php echo $eventStatus['EventStatus']['status']; ?>&nbsp;</td>
                     <td class="text-nowrap">

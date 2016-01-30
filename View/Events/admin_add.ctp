@@ -62,9 +62,11 @@
 <div class="btn-group">
     <?= $this->Form->btnSubmit(); ?>
     <?= $this->Form->btnReset(); ?>
-    <?= $this->Html->link(__('back'),
+    <?= $this->Html->link(
+        __('back'),
         ['controller' => 'events', 'action' => 'index', 'plugin' => 'calendar'],
-        ['class' => 'btn btn-success', 'icon' => ['class' => 'fa fa-arrow-left fa-fw']]); ?>
+        ['class' => 'btn btn-success', 'icon' => ['class' => 'fa fa-arrow-left fa-fw']]
+    ); ?>
 </div>
 <?= $this->Form->end(); ?>
 

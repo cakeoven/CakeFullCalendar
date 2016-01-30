@@ -17,8 +17,11 @@
 <div class="row">
     <div class="col-md-9">
         <ul class="nav nav-tabs" role="tablist">
-            <li class="active"><?php echo $this->Html->link(__('Event'), '#event',
-                    ["data-toggle" => 'tab', 'role' => 'tab']); ?></li>
+            <li class="active"><?php echo $this->Html->link(
+                __('Event'),
+                '#event',
+                ["data-toggle" => 'tab', 'role' => 'tab']
+            ); ?></li>
         </ul>
         <div class="" ass="tab-content">
             <div class="tab-pane active" id="event">
