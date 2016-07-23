@@ -12,11 +12,11 @@
 ?>
 <div class="eventTypes form">
 <?php echo $this->Form->create('EventType');?>
- 		<legend><?php __('Edit Event Type'); ?></legend>
+			<legend><?php __('Edit Event Type'); ?></legend>
 	<?php
-        echo $this->Form->input('id');
-        echo $this->Form->input('status');
+		echo $this->Form->input('id');
+		echo $this->Form->input('status');
 
-    ?>
+	?>
 	<?php echo $this->Form->end(__('Submit', true));?>
 </div>

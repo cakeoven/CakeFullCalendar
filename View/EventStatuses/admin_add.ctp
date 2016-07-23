@@ -16,9 +16,9 @@
 <div class="row">
 	<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
 		<div class="well">
-			<?php echo $this->Form->input('status', array('placeholder' => false)); ?>
+			<?php echo $this->Form->input('status', ['placeholder' => false]); ?>
 			<?php echo $this->Form->btnSubmit();?>
 		</div>
 	</div>
 </div>
-<?php echo $this->Form->end();?>
+<?php echo $this->Form->end();

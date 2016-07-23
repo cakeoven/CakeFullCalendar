@@ -12,15 +12,15 @@
 <?php $this->Html->addCrumb(__('Create')); ?>
 <?php echo $this->Form->create('EventType'); ?>
 <div class="row">
-    <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
-        <div class="well">
-            <h3><?php echo __('Add Event Type'); ?></h3>
-            <?php
-            echo $this->Form->input('name');
-            echo $this->Form->chosen('color', ['options' => $colors]);
-            ?>
-            <?php echo $this->Form->btnSubmit(); ?>
-        </div>
-    </div>
+	<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+		<div class="well">
+			<h3><?php echo __('Add Event Type'); ?></h3>
+			<?php
+			echo $this->Form->input('name');
+			echo $this->Form->chosen('color', ['options' => $colors]);
+			?>
+			<?php echo $this->Form->btnSubmit(); ?>
+		</div>
+	</div>
 </div>
-<?php echo $this->Form->end(); ?>
+<?php echo $this->Form->end();

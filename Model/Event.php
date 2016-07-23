@@ -18,48 +18,49 @@ App::uses('CalendarAppModel', 'Calendar.Model');
  */
 class Event extends CalendarAppModel
 {
-    /**
-     * @var string
-     */
-    public $displayField = 'title';
 
-    public $validate = [
-        'title' => [
-            'notempty' => [
-                'rule' => ['notempty'],
-            ],
-        ],
-        'unique' => [
-            'rule' => ['isUnique', 'title'],
-            'message' => 'An event with this title already exists',
-        ],
-        'start' => [
-            'notempty' => [
-                'rule' => ['notempty'],
-            ],
-        ],
-    ];
+	/**
+	 * @var string
+	 */
+	public $displayField = 'title';
 
-    public $belongsTo = [
-        'EventType' => [
-            'className' => 'Calendar.EventType',
-            'foreignKey' => 'type_id',
-        ],
-        'EventStatus' => [
-            'className' => 'Calendar.EventStatus',
-            'foreignKey' => 'status_id',
-        ],
-    ];
+	public $validate = [
+		'title' => [
+			'notempty' => [
+				'rule' => ['notempty'],
+			],
+		],
+		'unique' => [
+			'rule' => ['isUnique', 'title'],
+			'message' => 'An event with this title already exists',
+		],
+		'start' => [
+			'notempty' => [
+				'rule' => ['notempty'],
+			],
+		],
+	];
 
-    /**
-     * Validates the data to be saved
-     *
-     * @todo Write code about validation with all day event
-     * @param array $options
-     * @return void
-     */
-    public function beforeValidate($options = [])
-    {
-        parent::beforeValidate($options);
-    }
+	public $belongsTo = [
+		'EventType' => [
+			'className' => 'Calendar.EventType',
+			'foreignKey' => 'type_id',
+		],
+		'EventStatus' => [
+			'className' => 'Calendar.EventStatus',
+			'foreignKey' => 'status_id',
+		],
+	];
+
+	/**
+	 * Validates the data to be saved
+	 *
+	 * @todo Write code about validation with all day event
+	 * @param array $options
+	 * @return void
+	 */
+	public function beforeValidate($options = []) {
+
+		parent::beforeValidate($options);
+	}
 }

@@ -12,47 +12,45 @@
 <?php $this->Html->addCrumb(__('Create')); ?>
 <?php echo $this->Form->create('Event'); ?>
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active"><?php echo $this->Html->link(
-        __('Event'),
-        '#event',
-        ["data-toggle" => 'tab', 'role' => 'tab']
-    ); ?></li>
+	<li class="active"><?php echo $this->Html->link(
+		__('Event'),
+		'#event',
+		["data-toggle" => 'tab', 'role' => 'tab']
+	); ?></li>
 </ul>
 <div class="tab-content">
-    <div class="tab-pane active" id="event">
-        <?php
-        echo $this->Form->input('title');
-        echo $this->Form->input('details');
-        ?>
-        <div class="row">
-            <div class="col-sm-5">
-                <?php echo $this->Form->datetimepicker('start'); ?>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">
-                <?php echo $this->Form->datetimepicker('end'); ?>
-            </div>
-        </div>
+	<div class="tab-pane active" id="event">
+		<?php
+		echo $this->Form->input('title');
+		echo $this->Form->input('details');
+		?>
+		<div class="row">
+			<div class="col-sm-5">
+				<?php echo $this->Form->datetimepicker('start'); ?>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5">
+				<?php echo $this->Form->datetimepicker('end'); ?>
+			</div>
+		</div>
 
-        <div class="form-group">
-            <?php echo $this->Form->checkbox('all_day'); ?>
-            <?php echo $this->Form->label(__('All Day Event')); ?>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <?php echo $this->Form->chosen('type_id', ['empty' => false]); ?>
-            </div>
-            <div class="col-sm-6">
-                <?php echo $this->Form->chosen('status_id', ['empty' => false]); ?>
-            </div>
-        </div>
-    </div>
+		<div class="form-group">
+			<?php echo $this->Form->checkbox('all_day'); ?>
+			<?php echo $this->Form->label(__('All Day Event')); ?>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<?php echo $this->Form->chosen('type_id', ['empty' => false]); ?>
+			</div>
+			<div class="col-sm-6">
+				<?php echo $this->Form->chosen('status_id', ['empty' => false]); ?>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="btn-group">
-    <?php echo $this->Form->btnSubmit(); ?>
-    <?php echo $this->Form->btnReset(); ?>
+	<?php echo $this->Form->btnSubmit(); ?>
+	<?php echo $this->Form->btnReset(); ?>
 </div>
-<?php echo $this->Form->end(); ?>
-
-
+<?php echo $this->Form->end();

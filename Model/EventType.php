@@ -17,36 +17,36 @@ App::uses('CalendarAppModel', 'Calendar.Model');
 class EventType extends CalendarAppModel
 {
 
-    /**
-     * Name
-     *
-     * @var string
-     */
-    var $name = 'EventType';
+	/**
+	 * Name
+	 *
+	 * @var string
+	 */
+	var $name = 'EventType';
 
-    /**
-     * @var string
-     */
-    var $displayField = 'type';
+	/**
+	 * @var string
+	 */
+	var $displayField = 'type';
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    var $validate = [
-        'name' => [
-            'notempty' => [
-                'rule' => ['notempty'],
-            ],
-        ],
-    ];
+	/**
+	 * Validation rules
+	 *
+	 * @var array
+	 */
+	var $validate = [
+		'name' => [
+			'notempty' => [
+				'rule' => ['notempty'],
+			],
+		],
+	];
 
-    var $hasMany = [
-        'Event' => [
-            'className' => 'Calendar.Event',
-            'foreignKey' => 'type_id',
-            'dependent' => false,
-        ],
-    ];
+	var $hasMany = [
+		'Event' => [
+			'className' => 'Calendar.Event',
+			'foreignKey' => 'type_id',
+			'dependent' => false,
+		],
+	];
 }

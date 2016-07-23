@@ -14,9 +14,9 @@ App::uses('AppController', 'Controller');
  * @author  George Mponos
  * @author  Silas Montgomery
  * @package Calendar
+ * @property FlashComponent $Flash
  */
-class CalendarAppController extends AppController
-{
+class CalendarAppController extends AppController {
 
-    public $components = ['Session'];
+	public $components = ['Session'];
 }

@@ -1,43 +1,45 @@
 {
-  "name": "cakeoven/cakefullcalendar",
-  "description": "A CakePHP Plugin to have full calendar",
-  "homepage": "https://github.com/cakeoven/CakeFullCalendar",
-  "type": "cakephp-plugin",
-  "keywords": [
-    "cakeoven",
-    "cakephp",
-    "plugin",
-    "fullcalendar"
-  ],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "George Mponos",
-      "email": "gmponos@gmail.com",
-      "homepage": "http://gmponos.webthink.gr",
-      "role": "developer"
-    }
-  ],
-  "support": {
-    "issues": "https://github.com/cakeoven/CakeFullCalendar/issues"
-  },
-  "require": {
-    "php": ">=5.4.16",
-    "cakephp/cakephp": "^2.6",
-    "composer/installers": "*"
-  },
-  "require-dev": {
-    "squizlabs/php_codesniffer": "~2.4",
-    "phpunit/phpunit": "*"
-  },
-  "suggest": {
-    "apigen/apigen": "*"
-  },
-  "prefer-stable": true,
-  "extra": {
-    "branch-alias": {
-      "dev-master": "2.x-dev"
+    "name": "cakeoven/calendar",
+    "description": "A CakePHP Plugin to have full calendar",
+    "homepage": "https://github.com/cakeoven/CakeFullCalendar",
+    "type": "cakephp-plugin",
+    "keywords": [
+        "cakephp",
+        "plugin",
+        "fullcalendar"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "George Mponos",
+            "email": "gmponos@gmail.com",
+            "homepage": "http://gmponos.webthink.gr",
+            "role": "developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/cakeoven/CakeFullCalendar/issues"
     },
-    "installer-name": "Calendar"
-  }
+    "require": {
+        "php": ">=5.4.16",
+        "cakephp/cakephp": "^2.6",
+        "composer/installers": "*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "~2.4",
+        "phpunit/phpunit": "*"
+    },
+    "config": {
+        "vendor-dir": "Vendor/"
+    },
+    "suggest": {
+        "apigen/apigen": "*"
+    },
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        },
+        "installer-name": "CakeOvenCalendar"
+    }
 }

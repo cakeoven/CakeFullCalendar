@@ -10,21 +10,21 @@ App::uses('CalendarAppModel', 'Calendar.Model');
 class EventStatus extends CalendarAppModel
 {
 
-    var $displayField = 'status';
+	var $displayField = 'status';
 
-    var $validate = [
-        'status' => [
-            'notempty' => [
-                'rule' => ['notempty'],
-            ],
-        ],
-    ];
+	var $validate = [
+		'status' => [
+			'notempty' => [
+				'rule' => ['notempty'],
+			],
+		],
+	];
 
-    var $hasMany = [
-        'Event' => [
-            'className' => 'Calendar.Event',
-            'foreignKey' => 'status_id',
-            'dependent' => false,
-        ],
-    ];
+	var $hasMany = [
+		'Event' => [
+			'className' => 'Calendar.Event',
+			'foreignKey' => 'status_id',
+			'dependent' => false,
+		],
+	];
 }

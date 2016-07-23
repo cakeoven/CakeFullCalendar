@@ -13,16 +13,13 @@ App::uses('CalendarAppController', 'Calendar.Controller');
 /**
  * Class CalendarController
  */
-class CalendarController extends CalendarAppController
-{
+class CalendarController extends CalendarAppController {
 
-    var $name = 'Calendar';
+	public $name = 'Calendar';
 
-    public function index()
-    {
-    }
+	public function index() {
+	}
 
-    public function admin_index()
-    {
-    }
+	public function admin_index() {
+	}
 }

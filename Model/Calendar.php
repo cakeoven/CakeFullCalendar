@@ -19,5 +19,5 @@ App::uses('CalendarAppModel', 'Calendar.Model');
 class Calendar extends CalendarAppModel
 {
 
-    public $useTable = false;
+	public $useTable = false;
 }
