@@ -18,10 +18,10 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/cakeoven/CakeFullCalendar/issues"
+        "issues": "https://github.com/cakeoven/calendar/issues"
     },
     "require": {
-        "php": ">=5.4.16",
+        "php": ">=5.5",
         "cakephp/cakephp": "^2.6",
         "composer/installers": "*"
     },
@@ -40,6 +40,6 @@
         "branch-alias": {
             "dev-master": "2.x-dev"
         },
-        "installer-name": "CakeOvenCalendar"
+        "installer-name": "Calendar"
     }
 }
